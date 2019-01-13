@@ -1,0 +1,170 @@
+<html>
+    <head>
+        <title>Ampy.co</title>
+        <link href="css/reset.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link href="css/main.css" rel="stylesheet"/>
+    </head>
+    <body>
+
+        <!-- ========================================================================  -->
+        <!-- MAIN  -->
+        <!-- ========================================================================  -->
+
+        <header>
+            <div class="container-fluid head">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="head-bg">
+                            <h1>Ampy Story Generator</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="buttons">
+                            <a href="#">Home</a>
+                            <a href="#">Logout</a>
+                        </div>
+
+                        <div class="other">
+                            <a href="#" id="preview">
+                                <img src="images/preview.png"/>
+                                Preview</a>
+                            <a href="#" id="build">
+                                <img src="images/build.png"/>
+                                Build</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="panel">
+                <div class="pages">
+                </div>
+                <div class="pages-controls">
+                    <button class="btn page-add">Add Page</button>
+                </div>
+            </div>
+            <div class="panel panel-iframe">
+                <iframe id="iframe"></iframe>
+            </div>
+            <div class="panel">
+                <div class="custom-css-wrapper">
+                    <span>Custom CSS:</span>
+                    <textarea id="custom-css"></textarea>    
+                    <button class="btn save-css-button">Insert Custom CSS</button>
+                </div>
+                <div class="clear"></div>
+                <button class="btn export-button" data-toggle="modal" data-target="#exportModal">
+                    Export AMP Code
+                </button>
+                <textarea id="code"></textarea>
+            </div>
+        </div>
+
+        <!-- ========================================================================  -->
+        <!-- TEMPLATES  -->
+        <!-- ========================================================================  -->
+
+        <div class="page template">
+            <div class="page-meta">
+                <img src="images/page-drop.png"/>
+                <div class="page-title">
+                    Page #1
+                </div>
+                <button class="btn delete-button delete-page" title="Delete Page"><img src="images/trash.png"/></button>
+                <div class="attributes"></div>
+                <div class="clear"></div>
+            </div>
+            <div class="page-layers"></div>
+            <div class="page-controls">
+                <button class="btn add-button add-layer" title="Add Layer">Add Layer</button>
+            </div>
+        </div>
+
+        <div class="layer template">
+            <div class="component-meta">
+                <div class="component-title">
+                    Text Layer #1
+                </div>
+                <button class="btn delete-button delete-layer"><img src="images/minus.png"/></button>
+                <div class="clear"></div>
+                <div class="attributes">
+                    
+                </div>
+                <div class="clear"></div>
+
+                <div class="add-elements-holder">
+                    <span class="add-elements-text">Add element to layer</span>
+                    <div class="add-elements">
+                        <select class='add-select'></select>
+                        <button class="btn add-button add-from-select" title="Add"><img src="images/plus.png"/></button>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="layer-components">
+            </div>
+        </div>
+
+        <div class="component template">
+            <div class="component-meta">
+                <button class="btn delete-button delete-component"><img src="images/trash.png"/></button>
+                <div class="component-title">
+                    Text Layer #1
+                </div>
+                <div class="component-controls">
+                </div>
+                <div class="clear"></div>
+                <div class="attributes">
+                    
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- Test  -->
+
+        <!-- ========================================================================  -->
+        <!-- MODALS  -->
+        <!-- ========================================================================  -->
+
+        <div class="modal" tabindex="-1" role="dialog" id="exportModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">How to Export Code</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>
+                          <ol>
+                              <li>Create a folder on your server and download the <u><i>index.html</i></u> into it</li>
+                              <li>Dowload the <u><i>bookend.json</i></u> file in <strong>the same</strong> folder as <u><i>index.html</i></u>.</li>
+                          </ol>
+                      </p>
+                      <hr/>
+                      <h5>index.html</h5>
+                      <textarea id="full-code"></textarea>
+                      <br/>
+                      <br/>
+                      <h5>bookend.json</h5>
+                      <textarea id="bookend-code"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-primary export-modal-button export-modal-button-html">Download HTML</a>
+                        <a type="button" class="btn btn-primary export-modal-button export-modal-button-bookend">Download Bookend.json</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</html>

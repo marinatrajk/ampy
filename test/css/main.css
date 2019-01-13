@@ -1,0 +1,396 @@
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #e9ebee;
+}
+
+input{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+textarea{
+    width: 100%;
+    height: 100%;
+}
+
+iframe{
+    height: 100%;
+    width: 100%;
+}
+
+.clear{
+    clear: both;
+}
+
+textarea#code{
+    height: 20%;
+    display: none;
+}
+
+textarea#custom-css{
+    height: calc(100% - 30px);
+}
+
+textarea#full-code, textarea#bookend-code{
+    height: 100px;
+}
+
+select{
+    font-size: 12px;
+    text-transform: capitalize;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.attribute-input:after{
+    content: "";
+    background-image: url("../images/arrow.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    width: 10px;
+    position: absolute;
+    right: 0;
+}
+option{
+    text-transform: capitalize;
+}
+
+ol{
+    padding-left: 20px;
+}
+
+ol li{
+    list-style: decimal;
+}
+
+i{
+    font-style: italic;
+}
+
+.custom-css-wrapper{
+    height: 40%;
+}
+
+.panel{
+    float: left;
+    height: 100%;
+    width: 33.3%;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: scroll;
+    position: relative;
+}
+.panel:first-of-type{
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background: #fff;
+    border: 1px solid #979797;
+    box-shadow: 0 3px 7px 0 #000;
+    padding-top:0;
+}
+.panel .page-controls{
+    background-color: #727070;
+    min-height: 35px;
+    position: relative;
+}
+.panel .page-controls .add-layer{
+    float: right;
+    margin-right: 30px;
+    background: none;
+}
+.panel .page-controls .add-layer:after {
+    content: "";
+    background-image: url("../images/plus.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 26px;
+    top: 3px;
+}
+.template{
+    display: none;
+}
+
+.pages{
+    padding: 10px 0 0 0;
+}
+.pages .page:first-of-type .page-meta{
+    border-top-right-radius: 25px;
+}
+.page-add{
+    width: 100%;
+}
+
+.page{
+    border-radius: 10px;
+}
+
+.delete-button{
+    float:right;
+    font-size: 10px;
+    padding: 6px;
+}
+.delete-layer{
+    background:transparent;
+}
+.page-meta .delete-button{
+    position: absolute;
+    right: 20px;
+    top:10px;
+}
+
+.add-button{
+    padding: 0px 11px;
+    font-size: 12px;
+}
+
+.add-from-select{
+    float: right;
+    background-color: transparent !important;
+}
+
+.add-elements-holder{
+    margin-top: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-elements-text{
+    width: 50%;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add-elements{
+    width: 50%;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.layer-components{
+    padding: 10px;
+}
+
+.component{
+    background-color: #fff;
+    margin-bottom: 7px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 #000;
+}
+.component span{
+    color: #000 !important;
+}
+
+.component-meta, .page-meta{
+    padding: 10px;
+}
+.page-meta{
+    background: #fff;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #EAEAEA;
+}
+.layer .component .component-meta .component-title{
+    color: #22A1E3;
+}
+.component-meta .component-title, .page-meta img{
+    display: inline;
+}
+.component-meta .component-title, .page-meta .page-title{
+    color: #22A1E3;
+    font-size: 18px;
+    text-align: left;
+    display: inline;
+    font-weight: 200;
+}
+.page-meta .page-title{
+    margin-left: 10px;
+}
+.page-meta .page-title:before{
+    content: "";
+    background-image: url("../images/trash.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    right: 26px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.page-meta .page-title:after{
+    content: "";
+    background-image: url("../images/eye.png");
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-position: center center;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.component-meta .component-controls, .page-meta .page-controls{
+    float: right;
+
+}
+
+.component-controls{
+    width: 50%;
+    margin-top: 18px;
+}
+
+.page-layers{
+    padding: 10px;
+    background-color: #727070;
+}
+
+.layer{
+    background: #727070;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+}
+.layer .component-title{
+    color: #fff;
+}
+.component-content{
+    padding: 10px;
+}
+
+.attributes{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.attributes span{
+    color: #fff;
+}
+.attribute{
+    clear: both;
+    text-transform:capitalize;
+    display: flex;
+    align-items: center;
+}
+
+.attribute span{
+    float: left;
+    width: 50%;
+}
+
+.attribute-input{
+    float: right;
+    width: 50%;
+}
+
+.save-css-button{
+    height: 30px;
+    font-size: 12px;
+    float: right;
+    margin-top: 10px;
+}
+
+.export-button{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+
+.copy-done{
+    opacity: 0;
+}
+body{
+    background-color: #fff !important;
+}
+header .head .head-bg{
+    background-image: url('../images/blue-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+}
+header .head{
+    margin-bottom: 40px;
+}
+header .head .col-md-8{
+    padding: 0;
+}
+header .head .head-bg h1{
+    color: #fff;
+    font-weight: 200;
+    font-family: 'Helvetica', sans-serif;
+    padding-top:116px;
+    padding-left: 56px;
+    padding-bottom: 31px;
+    text-transform: uppercase;
+    font-size: 58px;
+    letter-spacing: -2.5px;
+}
+header .head .buttons{
+    float:right;
+    margin-right: 63px;
+    margin-top: 40px;
+}
+header .head .buttons a{
+    color: #22A1E3;
+}
+header .head .buttons a:first-child:after{
+    content: "|";
+    padding: 0 5px;
+}
+header .head .other{
+    position: absolute;
+    bottom: 20px;
+    right: 75px;
+}
+#preview{
+    color: #22A1E3;
+    padding: 8px 25px;
+    font-size: 32px;
+    letter-spacing: -1px;
+    display: inline;
+    border: 1px solid #22A1E3;
+    border-radius: 5px;
+    text-decoration: none;
+}
+#build{
+    display: inline;
+    padding: 8px 45px;
+    background-color: #22A1E3;
+    color: #fff;
+    font-size: 32px;
+    letter-spacing: -1px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.page-add, .add-layer, .add-button, .export-button, .save-css-button{
+    background-color: #22A1E3;
+    color: #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
